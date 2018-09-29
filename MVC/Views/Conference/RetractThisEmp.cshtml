@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "RetractThisEmp";
+}
+
+<h2>RetractThisEmp</h2>
+@ViewBag.a
+<h2>@ViewBag.msg</h2>
+<h2>@ViewBag.err</h2>
+@Html.ActionLink("Assign an other Employee", "AssignEmp", new { id = @ViewBag.z })
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+      
+    </div>
+}

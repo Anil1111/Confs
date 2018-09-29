@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ConfByType";
+}
+
+<h2>ConfByType</h2>
+
+@{
+
+    var myChart = new Chart(width: 600, height: 400)
+      .AddTitle("Conference By Type")
+      .AddSeries(chartType: "Pie",
+         xValue: new[] { "Obligatoire", "Facultative" },
+         yValues: new[] { @ViewBag.obl, @ViewBag.fac } )
+      .Write();
+}

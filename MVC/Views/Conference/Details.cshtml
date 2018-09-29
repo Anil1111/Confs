@@ -1,0 +1,50 @@
+﻿@model Domain.Entities.Conference
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Conference</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateConference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateConference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idConference }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Domain.Entities.Conference>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Stats", "ConfByDateChart")
+</p>
+@using (Html.BeginForm())
+{
+<p>
+    <div>
+       Search By Subject: @Html.TextBox("searchString")
+
+    </div>       <input type="submit" value="Search" id="submit" />          
+</p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateConference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateConference)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idConference }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idConference }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idConference })
+            @Html.ActionLink("Assign Employees", "AssignEmp", new { id = item.idConference })
+            @Html.ActionLink("Participating Employees", "listEmpByConf", new { idConf = item.idConference })
+        </td>
+    </tr>
+}
+
+</table>
+
+

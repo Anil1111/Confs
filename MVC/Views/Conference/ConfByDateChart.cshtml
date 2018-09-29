@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ConfByDateChart";
+}
+
+<h2>ConfByDateChart</h2>
+
+@{
+    var myChart = new Chart(width: 800, height: 400)
+                .AddSeries(
+                chartType: "column",
+                xValue: new[] { "Janvier", "Fervier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre" },
+                yValues: new[] { @ViewBag.jan, @ViewBag.fev, @ViewBag.mar, @ViewBag.avr, @ViewBag.mai, @ViewBag.jun, @ViewBag.jul, @ViewBag.aot, @ViewBag.sep, @ViewBag.oct, @ViewBag.nov, @ViewBag.dec }
+                ).Write();
+    
+}

@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "AssignThisEmp";
+}
+
+<h2>@ViewBag.msg</h2>
+<h2>@ViewBag.err</h2>
+
+@Html.ActionLink("Assign an other Employee", "AssignEmp", new { id = @ViewBag.z })
